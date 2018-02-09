@@ -1,0 +1,15 @@
+{
+    "name": "aghayev/kmltrackcreator",
+    "description": "KML Track Creator creates a track to use with Google Earth or any other geobrowser",
+    "keywords": ["kml", "gis", "geobrowser", "track", "path", "laravel", "artisan"],
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Imran Aghayev",
+            "email": "imran.aghayev@hotmail.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
