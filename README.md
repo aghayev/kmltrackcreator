@@ -9,6 +9,12 @@ KML Track Creator creates a track to use with Google Earth or any other geobrows
 composer require aghayev/kmltrackcreator
 ```
 
+## Test
+
+```bash
+./vendor/bin/phpunit vendor/aghayev/kmltrackcreator/tests/
+```
+
 ## Usage
 Please see [TestCase](https://github.com/aghayev/kmltrackcreator/blob/master/tests/KmlTrackCreatorTest.php).
 

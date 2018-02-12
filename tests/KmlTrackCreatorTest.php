@@ -3,7 +3,7 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Aghayev\KmlTrackCreator;
+use Aghayev\KmlTrackCreator\KmlTrackCreator;
 
 class KmlTrackCreatorTest extends TestCase {
 
@@ -53,7 +53,122 @@ class KmlTrackCreatorTest extends TestCase {
             $myKmlWriter->appendPlaceToFolder($placeParams);
         }
 
-        // Generate
-        $this->assertEmpty($myKmlWriter->generate());
+        // Match
+        $this->assertXmlStringEqualsXmlString(
+          $myKmlWriter->generate(), '<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>TARGET HISTORY LOCATION BETWEEN [A] AND [B]</name>
+    <Style id="waypoint">
+      <LabelStyle>
+        <scale>0.9</scale>
+        <color>ff00ff0c</color>
+      </LabelStyle>
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/pal4/icon61.png</href>
+          <x>64</x>
+          <y>128</y>
+          <w>32</w>
+          <h>32</h>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="track1">
+      <LineStyle>
+        <width>5</width>
+        <color>64eeee17</color>
+      </LineStyle>
+      <LabelStyle>
+        <scale>0.9</scale>
+        <color>ff00ff0c</color>
+      </LabelStyle>
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/pal4/icon62.png</href>
+          <x>64</x>
+          <y>128</y>
+          <w>32</w>
+          <h>32</h>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="track2">
+      <LineStyle>
+        <width>5</width>
+        <color>7d0000ff</color>
+      </LineStyle>
+      <LabelStyle>
+        <scale>0.9</scale>
+        <color>ff00ff0c</color>
+      </LabelStyle>
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/pal4/icon62.png</href>
+          <x>64</x>
+          <y>128</y>
+          <w>32</w>
+          <h>32</h>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="track3">
+      <LineStyle>
+        <width>5</width>
+        <color>afff0000</color>
+      </LineStyle>
+      <LabelStyle>
+        <scale>0.9</scale>
+        <color>ff00ff0c</color>
+      </LabelStyle>
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/pal4/icon62.png</href>
+          <x>64</x>
+          <y>128</y>
+          <w>32</w>
+          <h>32</h>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Folder>
+      <name><![CDATA[Start]]></name>
+      <Placemark>
+        <name><![CDATA[Start (1)]]></name>
+        <description><![CDATA[Start Position<br/>I started from here]]></description>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>-122.2442883478408,37.4347536724074,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Continue (2)]]></name>
+        <description><![CDATA[Continue Position<br/>I continue here]]></description>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>-122.2417741446485,37.43594997501623,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Stop (3)]]></name>
+        <description><![CDATA[Stop Position<br/>I stop from here]]></description>
+        <styleUrl>#track3</styleUrl>
+        <Point>
+          <coordinates>-122.2414951359056,37.43611878445952,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Path</name>
+        <styleUrl>#track3</styleUrl>
+        <LineString>
+          <coordinates>-122.2442883478408,37.4347536724074,0
+-122.2417741446485,37.43594997501623,0
+-122.2414951359056,37.43611878445952,0
+</coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>');
     }
 }

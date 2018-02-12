@@ -23,11 +23,11 @@ class KmlTrackCreator
     public function __construct()
     {
         // Creates the Document
-        $this->schemaDom = new DomDocument('1.0', 'UTF-8');
+        $this->schemaDom = new \DomDocument('1.0', 'UTF-8');
         $this->schemaDom->formatOutput = true;
         $this->schemaDom->preserveWhiteSpace = true;
         // Creates the root KML element and appends it to the root document
-        $this->kmlNode = $this->schemaDom->createElementNS('http://earth.google.com/kml/2.1', 'kml');
+        $this->kmlNode = $this->schemaDom->createElementNS('http://www.opengis.net/kml/2.2', 'kml');
         $this->schemaDom->appendChild($this->kmlNode);
         // Creates a KML Document element and append it to the KML element
         $this->documentNode = $this->schemaDom->createElement('Document');
