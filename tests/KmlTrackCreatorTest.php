@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Aghayev\KmlTrackCreator\KmlTrackCreator;
+use PHPUnit\Framework\TestCase;
 
 class KmlTrackCreatorTest extends TestCase {
 

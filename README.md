@@ -1,29 +1,45 @@
-# Kml Track Creator
+Kml Track Creator
+===========
 
 KML Track Creator creates a track to use with Google Earth or any other geobrowser.
 
 
-## Installation
+Installation
+-------------
 
 ```bash
 composer require aghayev/kmltrackcreator
 ```
 
-## Test
+Test
+-------------
 
 ```bash
+composer require  phpunit/phpunit
 ./vendor/bin/phpunit vendor/aghayev/kmltrackcreator/tests/
 ```
 
-## Usage
-Please see [TestCase](https://github.com/aghayev/kmltrackcreator/blob/master/tests/KmlTrackCreatorTest.php).
+Requirements
+------------
 
-### License
-This project is licensed under an Apache 2.0 license which you can find
-[in this LICENSE](https://github.com/aghayev/kmltrackcreator/blob/master/LICENSE).
+### PHP requirements:
+* PHP 5
 
 
-### Feedback
-If you have any feedback, comments or suggestions, please feel free to open an
-issue within this repository.
+Authors
+-------
+
+* [Imran Aghayev](http://github.com/aghayev) -
+  <http://www.aghayev.com/>
+
+
+Usage
+-------------
+Please see [KmlTrackCreatorTest.php]<https://github.com/aghayev/kmltrackcreator/blob/master/tests/KmlTrackCreatorTest.php>.
+
+
+License
+-------
+
+This project is licensed under the Apache 2.0 license. For more information, see <https://www.apache.org/licenses/LICENSE-2.0/>.
 
