@@ -35,7 +35,7 @@ Authors
 
 Usage
 -------------
-Please see [KmlTrackCreatorTest.php]<https://github.com/aghayev/kmltrackcreator/blob/master/tests/KmlTrackCreatorTest.php>.
+Please see [KmlTrackCreatorTest.php](https://github.com/aghayev/kmltrackcreator/blob/master/tests/KmlTrackCreatorTest.php).
 
 
 License
